@@ -16,7 +16,7 @@ const webutilstext = {
   },
   async typewriter(text, element, s) {
     for (let char = 0; char < text.length; char++) {
-      element.textContent += text[char];
+      document.querySelector(element).textContent += text[char];
       await new Promise(c => setTimeout(c, s / 100));
     }
   }
