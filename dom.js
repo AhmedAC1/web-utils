@@ -14,6 +14,9 @@ const webutilshtml = {
     },
     selectAll(elmnts) {
       return document.querySelectorAll(elmnts);
+    },
+    on(event, func, elmnt) {
+      document.querySelector(elmnt).addEventListener(event, func);
     }
   }
 }
