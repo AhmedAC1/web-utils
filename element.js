@@ -28,6 +28,34 @@ class Element {
   togClass(name) { this.element.classList.toggle(name) }
   hasClass(name) { return this.element.classList.contains(name) }
   appendTo(element) { element.appendChild(this.element) }
-  get() { return this.element }
-  delete() { delete this.element }
+  deleteFromMemory() { delete this.element }
+  set disabled(boo) { this.element.disabled = boo }
+  get dataset() { return this.element.dataset }
+  set hoverTitle(text) { this.element.title = text }
+  get classNames() { return this.element.className }
+  set value(text) { this.element.value = text }
+  get value() { return this.element.value }
+  newData(name, value) { this.element.dataset[name] = value }
+  getData(name) { return this.element.dataset[name] }
+  delData(name) { delete this.element.dataset[name] }
+  get classesArray() { return Array.from(this.element.classList) }
+  get HTMLElement() { return this.element }
+  hasAttr(name) { return this.element.hasAttribute(name) }
+  putAtten() { this.element.focus() }
+  distract() { this.element.blur() }
+  prependTo(element) { element.prepend(this.element) }
+  set blur(pixels) { this.element.style.filter = 'blur(' + pixels + 'px)' }
+  addLn() { this.element.textContent += '\n' }
+  clearChildren() { this.element.replaceChildren() }
+  get hasCssSelector(selc) { return this.element.matches(selc) }
+  appendMulInside(element) { this.element.append(element) }
+  appendOneInside(element) { this.element.appendChild(element) }
+  getInside(element) { this.element.querySelector(element) }
+  hasInside(element) { return this.element.querySelector(element) ? true : false }
+  get isEmpty() { return this.element.children.length === 0 }
+  onOnce(event, callback) { this.element.addEventListener(event, callback, { once: true }) }
+  do(event) { this.element.dispatchEvent(new Event(event)) }
+  selectAllText() { this.element.select() }
+  get style() { return this.element.style.cssText }
+  delAndNewAttr(name, newname, newvalue) { this.element.removeAttribute(name); this.element.setAttribute(newname, newvalue) }
 }
