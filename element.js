@@ -58,4 +58,16 @@ class Element {
   selectAllText() { this.element.select() }
   get style() { return this.element.style.cssText }
   delAndNewAttr(name, newname, newvalue) { this.element.removeAttribute(name); this.element.setAttribute(newname, newvalue) }
+  set onhover({enter, leave}) { this.element.onmouseenter = enter; if (leave) this.element.onmouseleave = leave }
+  set ondatachanged(callback) { this.element.onchange = callback }
+  set onclick(callback) { this.element.onclick = callback }
+  set onuserinput(callback) { this.element.oninput = callback }
+  set onformsubmit(callback) { this.element.onsubmit = callback }
+  set onatten(callback) { this.element.onfocus = callback }
+  set ondistract(callback) { this.element.onblur = callback }
+  set ondoubleclick(callback) { this.element.ondblclick = callback }
+  set onscroll(callback) { this.element.onscroll = callback }
+  set onmouserightclick(callback) { this.element.oncontextmenu = callback }
+  set onkeyboardclick({down, up}) { this.element.onkeydown = down; if (up) this.element.onkeyup = up }
+  get amountOfFunctions() { return 72 - 2 }
 }
